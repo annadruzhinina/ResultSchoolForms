@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.css";
+import { Label } from "./components/label/Label";
+import User from "./components/user/User.tsx";
+import PropTypes from "./components/PropTypes";
+import { CallBack } from "./components/callBack";
+
+const getUserFromServer = () => ({
+  name: "Anna",
+  age: 37,
+  email: "anna@rcbd.org",
+  phone: 5512217603,
+});
 
 function App() {
+  const user = getUserFromServer();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Label color={"red"}>App</Label>
+      <div>Information</div>
+      <User
+        name={user.name}
+        age={user.age}
+        email={user.email}
+        phone={user.phone}
+      />
+      <PropTypes />
+      <CallBack />
     </div>
   );
 }
