@@ -1,6 +1,18 @@
 import { useState } from "react";
 
-// State less
+// Stateless compinent
+const AppLayout = ({ a, b, setA, setB, sum }) => {
+  return (
+    <div>
+      <div>A: {a}</div>
+      <button onClick={() => setA(a + 1)}>Add 1 to A</button>
+      <div>B: {b}</div>
+      <button onClick={() => setB(b + 1)}>Add 1 to B</button>
+      <div>Sum A+B: {sum}</div>
+    </div>
+  );
+};
+
 const Counter = ({ value, setValue }) => {
   return (
     <>
@@ -17,16 +29,12 @@ export const CallBack = () => {
   const [b, setB] = useState(0);
 
   const sum = a + b;
-
+  console.log(sum);
   return (
-    <div>
+    <>
       <label>Qty: {value}</label>
       <Counter value={value} setValue={setValue} />
-      <div>A: {a}</div>
-      <button onClick={() => setA(a + 1)}>Add 1 to A</button>
-      <div>B: {b}</div>
-      <button onClick={() => setB(b + 1)}>Add 1 to B</button>
-      <div>Sum A+B: {sum}</div>
-    </div>
+      <AppLayout a={a} b={b} setA={setA} setB={setB} sum={sum} />;
+    </>
   );
 };
