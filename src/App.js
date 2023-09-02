@@ -9,6 +9,10 @@ import ContronFieldsNew from "./components/ContronFieldsNew";
 import ContronFields3 from "./components/ContronFieldsRefactor3";
 import SelectControll from "./components/SelectControll";
 import SelectComponent from "./components/SelectComponent";
+import Validation from "./components/Validation";
+import { Select } from "./components/Select";
+import UseRef from "./components/UseRef";
+import CounterRefUseState from "./components/CounterRefUseState";
 
 const getUserFromServer = () => ({
   name: "Anna",
@@ -39,7 +43,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Label color={"red"}>App</Label>
+      {/* <Label color={"red"}>App</Label>
       <div>Information</div>
       <input
         type="text"
@@ -86,14 +90,18 @@ function App() {
         age={user.age}
         email={user.email}
         phone={user.phone}
-      />
-      <Product />
-      <CallBack />
-      <ContronFields />
-      <ContronFieldsNew />
-      <ContronFields3 />
-      <SelectControll />
-      <SelectComponent />
+      /> */}
+      {/* <Product /> */}
+      {/* <CallBack />
+      <ContronFields /> */}
+      {/* <ContronFieldsNew /> */}
+      {/* <ContronFields3 /> */}
+      {/* <SelectControll /> */}
+      {/* <SelectComponent />
+      <Select />
+      <Validation />
+      <UseRef /> */}
+      <CounterRefUseState />
     </div>
   );
 }
